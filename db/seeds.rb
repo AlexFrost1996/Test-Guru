@@ -100,7 +100,7 @@ answers = Answer.create!([
                              question_id: questions[14].id }
                          ])
 
-users_tests = UserTest.create!([ 
+tests_users = TestsUsers.create!([ 
                                   { user_id: users[1].id, test_id: tests[1].id },
                                   { user_id: users[0].id, test_id: tests[2].id },
                                   { user_id: users[1].id, test_id: tests[3].id },
