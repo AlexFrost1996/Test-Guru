@@ -99,3 +99,11 @@ answers = Answer.create!([
                            { body: 'The pigs were insulted that they were named hamburgers.', correct: true,
                              question_id: questions[14].id }
                          ])
+
+users_tests = UserTest.create!([ 
+                                  { user_id: users[1].id, test_id: tests[1].id },
+                                  { user_id: users[0].id, test_id: tests[2].id },
+                                  { user_id: users[1].id, test_id: tests[3].id },
+                                  { user_id: users[0].id, test_id: tests[4].id },
+                                  { user_id: users[1].id, test_id: tests[0].id }
+                                ])
