@@ -4,6 +4,6 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: 'Test', foreign_key: :creator_id
 
   def tests_passed_by_user(level)
-    Test.where(level: level)
+    tests.where(level: level)
   end
 end
