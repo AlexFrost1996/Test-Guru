@@ -7,22 +7,23 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 users = User.create!([
-                       { name: :User },
-                       { name: :Lamer }
+                       { name: :User, email: 'first@mail.ru' },
+                       { name: :Lamer, email: 'second@mail.ru' },
+                       { name: :Admin, email: 'third@mail.ru' }
                      ])
 
-categories = Categorie.create!([
+categories = Category.create!([
                                  { title: :Frontend },
                                  { title: :Backend },
                                  { title: :Mobile }
                                ])
 
 tests = Test.create!([
-                       { title: :Rails, level: 2, category_id: categories[1].id },
-                       { title: :Go, level: 1, category_id: categories[1].id },
-                       { title: :JS, level: 2, category_id: categories[0].id },
-                       { title: :iOS, level: 1, category_id: categories[2].id },
-                       { title: :React, level: 2, category_id: categories[0].id }
+                       { title: :Rails, level: 2, category_id: categories[1].id, creator_id: users[0].id },
+                       { title: :Go, level: 1, category_id: categories[1].id, creator_id: users[0].id },
+                       { title: :JS, level: 2, category_id: categories[0].id, creator_id: users[1].id },
+                       { title: :iOS, level: 1, category_id: categories[2].id, creator_id: users[2].id },
+                       { title: :React, level: 2, category_id: categories[0].id, creator_id: users[2].id }
                      ])
 
 questions = Question.create!([
