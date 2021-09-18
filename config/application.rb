@@ -12,7 +12,7 @@ module TestGuru
     config.load_defaults 6.1
 
     config.time_zone = 'Europe/Minsk'
-    config.i18n.default_locale = :'en-US'
+    config.i18n.default_locale = :en
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
