@@ -7,6 +7,7 @@ class QuestionsController < ApplicationController
   def index
     @questions = @test.questions.order(created_at: :asc).pluck(:body)
     render plain: @questions * "\n"
+    # render json: { questions: @test.questions }
   end
 
   def show

@@ -30,6 +30,11 @@ class TestsController < ApplicationController
     render plain: 'Test was deleted!'
   end
 
+  def search
+    result = ["Class: #{params.class}", "Parameters: #{params.inspect}"]
+    render plain: result.join("\n")
+  end
+
   private
 
   def test_params
