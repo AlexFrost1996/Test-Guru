@@ -19,9 +19,19 @@ class TestsController < ApplicationController
   def create
     @test = Test.new(test_params)
     if @test.save
-      render :show
+      redirect_to @test
     else
       render :new
+    end
+  end
+
+  def edit; end
+  
+  def update
+    if @test.update(test_params)
+      redirect_to @test
+    else
+      render :edit
     end
   end
 
@@ -38,7 +48,7 @@ class TestsController < ApplicationController
   private
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :creator_id)
   end
 
   def find_test
