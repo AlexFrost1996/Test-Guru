@@ -4,10 +4,7 @@ class TestsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
-    respond_to do |format|
-      format.html { render plain: 'All tests' }
-      format.json { render json: {tests: Test.all} }
-    end
+    @tests = Test.all
   end
 
   def new
@@ -37,7 +34,7 @@ class TestsController < ApplicationController
 
   def destroy
     @test.destroy
-    render plain: 'Test was deleted!'
+    redirect_to test_path
   end
 
   def search
