@@ -1,0 +1,44 @@
+<p>
+  <strong>Title:</strong>
+  <%= @test.title %>
+</p>
+
+<p>
+  <%= link_to 'New question',  new_test_question_path(@test) %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @test.level %>
+</p>
+
+<p>
+  <strong>Category_id:</strong>
+  <%= @test.category_id %>
+</p>
+
+<p>
+  <strong>Creator_id:</strong>
+  <%= @test.creator_id %>
+</p>
+
+<%= link_to 'Edit', edit_test_path(@test) %>
+<%= link_to 'Back', tests_path %>
+
+<p>
+  <strong>
+    <%= @test.title %> Questions:
+  </strong>
+</p>
+
+<table>
+  <tr>
+    <th>Body</th>
+    <th colspan="3">Actions</th>
+  </tr>
+
+  <p>
+    <%= render @test.questions %>
+  </p>
+
+</table>
