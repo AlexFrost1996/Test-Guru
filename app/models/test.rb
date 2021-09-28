@@ -1,8 +1,8 @@
 class Test < ApplicationRecord
-  belongs_to :category
   has_many :questions
-  has_many :tests_users
-  has_many :users, through: :tests_users
+  has_many :test_passages
+  has_many :users, through: :test_passages
+  belongs_to :category
   belongs_to :creator, class_name: 'User', foreign_key: :creator_id
 
   scope :easy, -> { where(level: 0..1) }
@@ -16,5 +16,9 @@ class Test < ApplicationRecord
   
   def self.tests_titles_in_category(category)
     tests_in_category(category).order(title: :desc).pluck(:title) 
+  end
+
+  def number_of_questions
+    self.questions.count
   end
 end
