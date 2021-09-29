@@ -11,6 +11,19 @@
   </head>
 
   <body>
+    <ul class="nav">
+      <li class="nav-project-name"><%= link_to "Test Guru Project", "/" %></li>
+      <% if logged_in? %>
+        <li class="nav-user"><span class="welcome">Welcome, <%= current_user.email%> Guru</span></li>
+        <li class="nav-exit"><%= link_to 'Logout', '/logout', method: :delete, data: { confirm: 'Are you sure logout?' } %></li>
+      <% end %>
+
+      <% if !logged_in? %>
+        <li class="nav-registration"><%= link_to "Registration", "/signup"%></li>
+        <li class="nav-login"><%= link_to "Login", "/login"%></li>
+      <% end %>
+    </ul>
+
     <section class="content-wrapper">
       <div class="content-container">
         <%= yield %>
