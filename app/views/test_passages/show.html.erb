@@ -10,7 +10,7 @@
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body do |b| %>
     <p>
       <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-      <%= b.lebel %>
+      <%= b.label %>
     </p>
   <% end %>
 
