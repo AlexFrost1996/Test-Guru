@@ -39,11 +39,6 @@ class Admin::TestsController < Admin::BaseController
     redirect_to admin_tests_path
   end
 
-  def search
-    result = ["Class: #{params.class}", "Parameters: #{params.inspect}"]
-    render plain: result.join("\n")
-  end
-
   private
 
   def test_params
