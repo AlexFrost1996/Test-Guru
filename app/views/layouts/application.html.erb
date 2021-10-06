@@ -1,33 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1, shrink-to-fit=no">
+    
     <title>TestGuru</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <ul class="nav">
-      <li class="nav-project-name"><%= link_to "Test Guru Project", "/" %></li>
-      
-      <% if user_signed_in? %>
-        <p class="nav user">
-          Welcome, <b><%= current_user.email %></b> Guru |
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-        </p>
-      <% end %>
+    <%= render "shared/nav" %>
+    <div class="container">
       <%= render 'shared/flash' %>
-    </ul>
-
-    <section class="content-wrapper">
-      <div class="content-container">
-        <%= yield %>
-      </div>
-    </section>
+      <%= yield %>
+    </div>
     <%= render "shared/footer" %>
   </body>
 </html>
