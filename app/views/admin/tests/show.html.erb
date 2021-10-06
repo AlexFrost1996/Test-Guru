@@ -1,40 +1,40 @@
 <p>
-  <strong>Title:</strong>
+  <strong><%= t('.title') %>:</strong>
   <%= @test.title %>
 </p>
 
 <p>
-  <%= link_to 'New question',  new_admin_test_question_path(@test) %>
+  <%= link_to t('.new_question'),  new_admin_test_question_path(@test) %>
 </p>
 
 <p>
-  <strong>Level:</strong>
+  <strong><%= t('.level') %>:</strong>
   <%= @test.level %>
 </p>
 
 <p>
-  <strong>Category_id:</strong>
+  <strong><%= t('.category') %>:</strong>
   <%= @test.category_id %>
 </p>
 
 <p>
-  <strong>Creator_id:</strong>
+  <strong><%= t('.creator') %>:</strong>
   <%= @test.creator_id %>
 </p>
 
-<%= link_to 'Edit', edit_admin_test_path(@test) %>
-<%= link_to 'Back', admin_tests_path %>
+<%= link_to t('edit'), edit_admin_test_path(@test) %>
+<%= link_to t('back'), admin_tests_path %>
 
 <p>
   <strong>
-    <%= @test.title %> Questions:
+    <%= t('.questions', title: @test.title) %>:
   </strong>
 </p>
 
 <table>
   <tr>
-    <th>Body</th>
-    <th colspan="3">Actions</th>
+    <th><%= t('.body') %></th>
+    <th colspan="3"><%= t('.actions') %></th>
   </tr>
 
   <ol>
