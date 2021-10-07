@@ -47,6 +47,9 @@ ru:
       header: "Прохождение %{title} Теста"
       question: "Вопрос"
       next: "Далее"
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время сохранения gist произошла ошибка"
   
   admin:
     answers:
@@ -97,3 +100,6 @@ ru:
   tests_mailer:
     completed_test:
       subject: 'Вы успешно завершили тест на TestGuru!'
+
+  gist_question_service:
+    gist_description:  "Вопрос %{test_title} от TestGuru" 

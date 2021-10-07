@@ -45,6 +45,9 @@ en:
       header: "Passing the %{title} Test"
       question: "Question"
       next: "Next"
+    gist:
+      success: "Gist was  successfully created!"
+      failure: "An error occurred while saving gist"
 
   admin:
     answers:
@@ -96,3 +99,6 @@ en:
   tests_mailer:
     completed_test:
       subject: 'You just complited the TestGuru test!'
+  
+  gist_question_service:
+    gist_description:  "A question about %{test_title} from TestGuru"

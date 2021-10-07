@@ -1,6 +1,6 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_test_passage, only: %i[show update result] 
+  before_action :find_test_passage, only: %i[show update result gist] 
 
   def show
   end
@@ -17,6 +17,10 @@ class TestPassagesController < ApplicationController
     else
       render :show
     end
+  end
+
+  def gist
+    result = GistQuestionServise.new(@test_passage.current_question).call
   end
 
   private

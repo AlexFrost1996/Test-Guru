@@ -1,0 +1,5 @@
+<tr>
+  <td><%= link_to gist.question_title, admin_question_path(Question.find_by(id: gist.question_id)) %></td>
+  <td><a href="https://gist.github.com/<%= gist.url %>"><%= gist.url %></a></td>
+  <td><%= User.find_by(id: gist.user_id).email %></td>
+</tr> 
