@@ -19,6 +19,6 @@ module TestGuru
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
-    config.autoload_paths << "#{Rails.root}/lib/clients"
+    # config.autoload_paths << "#{Rails.root}/lib/clients"
   end
 end
