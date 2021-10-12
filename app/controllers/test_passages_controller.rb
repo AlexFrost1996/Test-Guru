@@ -25,7 +25,7 @@ class TestPassagesController < ApplicationController
 
     if new_gist.success?
       question_title = @test_passage.current_question.body
-      current_user.gists.create(question_title: question_title[0..24], url: result.id, question_id: @test_passage.current_question.id).save!
+      current_user.gists.create(url: result.id, question_id: @test_passage.current_question.id)
 
       flash_options = { notice: t('.success') + " #{result.html_url}"}
     else
