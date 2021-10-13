@@ -1,0 +1,11 @@
+<div class="conteiner row justify-content-center">
+  <h1>All Gists</h1>
+
+  <div class="table row justify-content-center mt-3 mb-3">
+    <table>
+      <%= render @gists %>
+    </table>
+  </div>
+
+  <%= link_to t('back'), admin_tests_path %>
+</div> 
