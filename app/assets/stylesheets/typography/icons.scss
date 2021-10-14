@@ -1,5 +1,15 @@
-.octicon {
+.octicon, .confirmation-success {
   display: inline-block;
   vertical-align: text-top;
   fill: currentColor;
+}
+
+.confirmation-success {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: green;
+}
+
+.no-confirmation{
+  fill: red;
 }
