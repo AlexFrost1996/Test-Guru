@@ -17,11 +17,12 @@ function showNotification (){
     icon.classList.add('no-confirmation')
     icon.classList.add('hide')
     return
-  } if (password === password_confirmation) {
+  } 
+  if (password === password_confirmation) {
     icon.classList.remove('no-confirmation')
     icon.classList.remove('hide')
 
-  } if (password != password_confirmation) {
+  } else {
     icon.classList.add('no-confirmation')
     icon.classList.remove('hide')
   }
