@@ -94,6 +94,8 @@ en:
         header: "Create new Test"
       edit:
         header: "Edit %{title} Test"
+      form_inline:
+        submit: "OK"
 
 
   tests_mailer:
