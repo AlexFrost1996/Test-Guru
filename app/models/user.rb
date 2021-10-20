@@ -4,8 +4,8 @@ class User < ApplicationRecord
          :recoverable, 
          :rememberable,
          :trackable,
-         :validatable#,
-         #:confirmable
+         :validatable,
+         :confirmable
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
