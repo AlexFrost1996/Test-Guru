@@ -47,9 +47,12 @@ ru:
       header: "Прохождение %{title} Теста"
       question: "Вопрос"
       next: "Далее"
+      no_questions: "Ошибка! Тесты не содержат вопросов."
     gist:
       success: "Gist успешно сохранен!"
       failure: "Во время сохранения gist произошла ошибка"
+    update:
+      no_answer: "Вам необходимо выбрать вариант ответа!"
   
   admin:
     answers:
@@ -104,4 +107,17 @@ ru:
       subject: 'Вы успешно завершили тест на TestGuru!'
 
   gist_question_service:
-    gist_description:  "Вопрос %{test_title} от TestGuru" 
+    gist_description:  "Вопрос %{test_title} от TestGuru"
+
+  feedbacks:
+    create:
+      success: "Отзыв успрешно отправлен!"
+    new:
+      title: "Оставте свой отзыв:"
+    form:
+      label: "Оставте свой отзыв здесь"
+      submit: "Отправить"
+
+  feedbacks_mailer:
+    subject: "Отзыв о TestGuru"
+    stranger: "Аноним"

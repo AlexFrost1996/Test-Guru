@@ -1,0 +1,8 @@
+<div class="card border-primary">
+  <div class="card-body">
+    <%= form_with url: feedbacks_path, method: :post do |f| %>
+      <%= f.text_area :feedback, autofocus: true, :rows=>5, :cols=>50, :maxlength=>"254", placeholder: t('.label') %>
+      <%= f.submit t('.submit'), class: 'btn btn-primary mt-3' %>
+    <% end %>
+  </div>
+</div>

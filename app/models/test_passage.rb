@@ -24,7 +24,7 @@ class TestPassage < ApplicationRecord
   end
 
   def success_percent
-    correct_questions.to_i * 100.0 / test.questions.count
+    ((correct_questions.to_f/test.questions.count)*100).round(2)
   end
 
   def current_question_number
