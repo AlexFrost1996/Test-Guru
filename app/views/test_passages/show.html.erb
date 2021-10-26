@@ -1,7 +1,18 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
+<% current_question_number = @test_passage.current_question_number %>
+<% number_of_questions = @test_passage.test.number_of_questions %>
+
 <div class="mt-3">
-  <p><%= t('.question') %> <%= @test_passage.current_question_number %> / <%= @test_passage.test.number_of_questions %></p>
+  <p><%= t('.question') %> <%= current_question_number %> / <%= number_of_questions %></p>
+</div>
+
+<div class="progress-bar-container">
+  <div class="progress-bar" 
+       data-current-test = "<%= current_question_number %>"
+       data-all-tests = "<%= number_of_questions %>">
+    <p class="progress-bar_percent"></p>
+  </div>
 </div>
 
 <p>

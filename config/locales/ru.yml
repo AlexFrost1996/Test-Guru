@@ -96,6 +96,8 @@ ru:
         header: "Создать новый Тест"
       edit:
         header: "Изменить %{title} Тест"
+      form_inline:
+        submit: "ОК"
 
   tests_mailer:
     completed_test:
