@@ -8,9 +8,13 @@
   </head>
 
   <body>
-    <%= render 'shared/nav'%>
-    <%= render 'shared/flash' %>
-    <%= yield %>
-    <%= render "shared/footer" %>
+    <div class="global_wrapper">
+      <div class="global_container">
+        <%= render 'shared/nav'%>
+        <%= render 'shared/flash' %>
+        <%= yield %>
+      </div>
+      <%= render "shared/footer" %>
+    </div>
   </body>
 </html>

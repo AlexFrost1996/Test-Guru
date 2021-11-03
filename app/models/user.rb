@@ -4,15 +4,15 @@ class User < ApplicationRecord
          :recoverable, 
          :rememberable,
          :trackable,
-         :validatable#,
-         #:confirmable
+         :validatable,
+         :confirmable
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   has_many :gists
-  has_many :test_passages
+  has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
-  has_many :created_tests, class_name: 'Test', foreign_key: :creator_id
+  has_many :created_tests, class_name: 'Test', foreign_key: :creator_id, dependent: :nullify
 
   validates :email, presence: true, 
                     uniqueness: true, 

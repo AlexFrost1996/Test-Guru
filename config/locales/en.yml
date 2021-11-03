@@ -45,10 +45,13 @@ en:
       header: "Passing the %{title} Test"
       question: "Question"
       next: "Next"
+      no_questions: "Error! Tests don't contain questions."
     gist:
       success: "Gist was  successfully created!"
       failure: "An error occurred while saving gist"
-
+    update:
+      no_answer: "You need to select an answer!"
+      
   admin:
     answers:
       create:
@@ -104,3 +107,16 @@ en:
   
   gist_question_service:
     gist_description:  "A question about %{test_title} from TestGuru"
+  
+  feedbacks:
+    create:
+      success: "Feedback was successfully send!"
+    new:
+      title: "Please leave your feedback:"
+    form:
+      label: "Please leave your feedback here"
+      submit: "Send"
+
+  feedbacks_mailer:
+    subject: "Feedback about TestGuru app"
+    stranger: "User"
