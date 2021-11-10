@@ -104,6 +104,7 @@ en:
         level: "Level"
         questions: "Questions"
         actions: "Actions"
+        time: "Time"
       show:
         title: "Title"
         new_question: "New question"
@@ -113,6 +114,7 @@ en:
         questions: "Questions %{title}"
         actions: "Actions"
         body: "Body"
+        time: "Time: %{timer} minutes"
       new:
         header: "Create new Test"
       edit:

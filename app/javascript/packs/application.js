@@ -11,6 +11,7 @@ require("utilities/sorting")
 require("utilities/passwordNotification")
 require("utilities/formInline")
 require("utilities/progressBar")
+require("utilities/timer")
 
 Rails.start()
 Turbolinks.start()

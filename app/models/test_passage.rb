@@ -20,6 +20,10 @@ class TestPassage < ApplicationRecord
     save!
   end
 
+  def get_timer
+    self.created_at + self.test.timer * 60 - Time.now
+  end
+
   def succeeded?
     success_percent >= TEST_COMPLITED
   end
