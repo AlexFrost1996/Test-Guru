@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-6">
+    <h1 class="mt-3"><%= t('.header') %></h1>
+    <hr>
+    <%= link_to t('.tests'), tests_path, class: "btn btn-outline-info btn-sm" %>
+    <% if current_user.admin? %>
+      <%= link_to t('.create_badge'), new_admin_badge_path, class: "btn btn-success btn-sm" %>
+    <% end %>
+    <div class="row">
+      <%= render @badges %>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <h1 class="mt-3"><%= t('.user_badges') %></h1>
+    <hr>
+    <br />
+    <div class="row">
+      <% if current_user.badges.any? %>
+        <%= render @user_badges %>
+      <% else %>
+        <p class="mt-4"><%= t('.no_badges') %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

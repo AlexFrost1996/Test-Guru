@@ -1,0 +1,18 @@
+<h1 class="mt-3"><%= @badge.title %></h1>
+<hr />
+<%= link_to t('.tests'), tests_path, class: "btn btn-outline-info btn-sm" %>
+<%= link_to t('.badges'), badges_path, class: "btn btn-outline-info btn-sm" %>
+
+<% if current_user.admin? %>
+<%= link_to t('edit'), edit_admin_badge_path(@badge), class: "btn btn-warning btn-sm" %>
+<%= link_to t('delete'), admin_badge_path(@badge),
+    class: "btn btn-danger btn-sm",
+    method: :delete,
+    data: { confirm: t('sure')} %>
+<% end %>
+
+<div class="row mt-4">
+  <div class="col-6">
+    <p><%= image_tag("#{@badge.image_name}", size: "300") %></p>
+  </div>
+</div>

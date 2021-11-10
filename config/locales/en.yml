@@ -6,6 +6,8 @@ en:
   delete: "Delete"
   back: "Back"
   sure: "Are you sure?"
+  new_badge: "Create new badge"
+  edit_badge: "Edit badge"
 
   helpers:
     submit:
@@ -51,6 +53,17 @@ en:
       failure: "An error occurred while saving gist"
     update:
       no_answer: "You need to select an answer!"
+
+  badges:
+    index:
+      header: "All badges"
+      tests: "To Tests"
+      create_badge: "Create badge"
+      user_badges: "My badges"
+      no_badges: "You don't have any badges"
+    show:
+      tests: "To Tests"
+      badges: "To Badges"
       
   admin:
     answers:
@@ -63,6 +76,13 @@ en:
     base:
       admin_required!:
         message: "You are not autorized to view this page"
+    badges:
+      create:
+        success: "Badge was successfully created"
+      update:
+        success: "Badge was successfully updated"
+      destroy:
+        success: "Badge was successfully deleted"
     questions:
       create:
         success: "Question was successfully created"

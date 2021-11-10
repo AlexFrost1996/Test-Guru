@@ -5,6 +5,7 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
   before_validation :before_validation_set_next_question, on: :update
+  before_update :before_update_set_success
 
   TEST_COMPLITED = 85
 
@@ -41,6 +42,10 @@ class TestPassage < ApplicationRecord
     self.current_question = next_question
   end
 
+  def before_update_set_success
+    self.success = true if self.succeeded?
+  end
+  
   def correct_answer?(answers_ids)
     correct_answers.ids.sort == answers_ids&.map(&:to_i)&.sort
   end
