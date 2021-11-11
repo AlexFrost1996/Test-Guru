@@ -6,6 +6,8 @@ ru:
   delete: "Удалить"
   back: "Назад"
   sure: "Вы уверены?"
+  new_badge: "Создать новый значок"
+  edit_badge: "Изменить значок"
 
   helpers:
     submit:
@@ -53,6 +55,17 @@ ru:
       failure: "Во время сохранения gist произошла ошибка"
     update:
       no_answer: "Вам необходимо выбрать вариант ответа!"
+
+  badges:
+    index:
+      header: "Все значки"
+      tests: "К Тестам"
+      create_badge: "Создать значок"
+      user_badges: "Мои значки"
+      no_badges: "У вас нет ни одного значка"
+    show:
+      tests: "К Тестам"
+      badges: "К Значкам"
   
   admin:
     answers:
@@ -65,6 +78,13 @@ ru:
     base:
       admin_required!:
         message: "Вы не авторизованы для просмотра данной страницы"
+    badges:
+      create:
+        success: "Значок успешно создан"
+      update:
+        success: "Значок успешно обновлён"
+      destroy:
+        success: "Значок успешно удалён"
     questions:
       create:
         success: "Вопрос успешно создан"
@@ -86,6 +106,7 @@ ru:
         level: "Уровень"
         questions: "Вопросы"
         actions: "Действия"
+        time: "Время"
       show:
         title: "Название"
         new_question: "Новый вопрос"
@@ -95,6 +116,7 @@ ru:
         questions: "Вопросы %{title}"
         actions: "Действия"
         body: "Тело"
+        time: "Время: %{timer} минут"
       new:
         header: "Создать новый Тест"
       edit:

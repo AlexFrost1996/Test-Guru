@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout}
   
+  resources :feedbacks, only: %i[new create]
+  resources :badges, path: :achivements, only: %i[index show]
+
   resources :tests, only: :index do
     resources :questions, only: :show, shallow: true, except: :index do
       resources :answers, only: :show, shallow: true, except: :index
@@ -28,7 +31,6 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: %i[index]
+    resources :badges, path: :achivements
   end
-
-  resources :feedbacks, only: %i[new create]
 end

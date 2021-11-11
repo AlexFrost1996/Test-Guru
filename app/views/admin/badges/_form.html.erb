@@ -1,0 +1,20 @@
+<h1><%= badge_header(@badge) %></h1>
+<hr />
+<%= form_with model: [:admin, @badge] do |f| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <p><%= f.label :title %></p>
+  <p><%= f.text_field :title %></p>
+
+  <p><%= f.label :image_name %></p>
+  <p><%= f.select :image_name, @images %></p>
+
+  <p><%= f.label :rule %></p>
+  <p><%= f.select :rule, @rules %></p>
+
+  <p><%= f.label :rule_value %></p>
+  <p><%= f.text_field :rule_value %></p>
+
+  <%= f.submit class: "btn btn-primary" %>
+  <%= link_to t('back'), badges_path, class: "btn btn-primary" %>
+<% end %>
