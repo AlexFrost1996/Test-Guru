@@ -1,6 +1,6 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_test_passage, only: %i[show update result gist] 
+  before_action :find_test_passage, only: %i[show update result gist]
 
   def show
     if @test_passage.current_question != nil
@@ -17,8 +17,8 @@ class TestPassagesController < ApplicationController
     return redirect_to test_passage_path(@test_passage), notice: t('.no_answer') unless params[:answer_ids]
     @test_passage.accept!(params[:answer_ids])
     
-    if @test_passage.completed?
-      #TestsMailer.completed_test(@test_passage).deliver_now
+    if @test_passage.completed? || time_left?
+      TestsMailer.completed_test(@test_passage).deliver_now
       BadgeService.new(@test_passage).call
       redirect_to result_test_passage_path(@test_passage)
     else
@@ -46,5 +46,9 @@ class TestPassagesController < ApplicationController
 
   def find_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def time_left?
+    Time.now - (@test_passage.created_at + @test_passage.test.timer * 60) >= 0
   end
 end

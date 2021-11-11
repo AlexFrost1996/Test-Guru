@@ -106,6 +106,7 @@ ru:
         level: "Уровень"
         questions: "Вопросы"
         actions: "Действия"
+        time: "Время"
       show:
         title: "Название"
         new_question: "Новый вопрос"
@@ -115,6 +116,7 @@ ru:
         questions: "Вопросы %{title}"
         actions: "Действия"
         body: "Тело"
+        time: "Время: %{timer} минут"
       new:
         header: "Создать новый Тест"
       edit:
