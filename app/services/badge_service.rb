@@ -7,27 +7,26 @@ class BadgeService
   end
 
   def call
-    @user_badges = @current_user.badges.count
+    @count_user_badges = @current_user.badges.count
     @badges.each do |badge|
-      @current_user.badges << badge if not_received_earlier?(badge) && send("#{badge.rule}_rule_completed?", badge)
+      if not_received_earlier?(badge) && send("#{badge.rule}_rule_completed?", badge)
+        @current_user.badges << badge
+      end
     end
-    check_new_badges
+    
+    if @count_user_badges != @current_user.badges.count
+      flash[:notice] = "You have new achievements! Check out your rewards!"
+    end
   end
 
   private
-
-  def check_new_badges
-    return if @user_badges == @current_user.badges.count
-    flash[:notice] = "You have new achievements! Check out your rewards!"
-  end
 
   def not_received_earlier?(badge)
     @current_user.badges.exclude?(badge)
   end
 
   def first_rule_completed?(badge)
-    test_passed_by_user = @current_test.test_passages.where(user: @current_user)
-    test_passed_by_user.first.succeeded? && test_passed_by_user.count == 1
+    @current_test.test_passages.where(user: @current_user, success: true).count == 1
   end
 
   def level_rule_completed(badge)
